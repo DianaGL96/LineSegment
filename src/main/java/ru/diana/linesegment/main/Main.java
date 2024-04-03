@@ -1,5 +1,6 @@
 package ru.diana.linesegment.main;
 
+import ru.diana.linesegment.service.SegmentLength;
 import ru.diana.linesegment.util.LineSegment;
 
 import java.util.Scanner;
@@ -14,7 +15,8 @@ public class Main {
         double x2 = scanner.nextDouble();
         double y2 = scanner.nextDouble();
         LineSegment lineSegment = new LineSegment(x1, x2, y1, y2);
-        double length = lineSegment.calculateLength();
+        SegmentLength segmentLength = new SegmentLength(lineSegment);
+        double length = segmentLength.calculateLength();
         System.out.println("\nДлина отрезка AB на плоскости равна " + length);
     }
 }
